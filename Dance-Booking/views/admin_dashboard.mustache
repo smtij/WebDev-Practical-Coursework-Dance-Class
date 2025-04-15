@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card text-center">
+      <div class="card-header">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Welcome, Admin!</p>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-primary" onclick="location.href='/admin/manage-courses'">Manage Courses</button>
+          <button type="button" class="btn btn-secondary" onclick="location.href='/admin/manage-users'">Manage Users</button>
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-center gap-2">
+        <a href="/" class="btn btn-outline-primary mr-2">Back to Home</a>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

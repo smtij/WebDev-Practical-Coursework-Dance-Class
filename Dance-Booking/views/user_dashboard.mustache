@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header text-center">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Welcome, valued user!</p>
+        <div class="mb-4">
+          <button class="btn btn-primary mr-2" onclick="location.href='/courses'">View Courses</button>
+          <button class="btn btn-info" onclick="location.href='/user/my-registrations'">My Registrations</button>
+        </div>
+        <!-- Delete Account Form -->
+        <form action="/user/delete-account" method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This cannot be undone.');" class="mb-3">
+          <button type="submit" class="btn btn-danger">Delete My Account</button>
+        </form>
+      </div>
+      <div class="card-footer text-center">
+        <a href="/" class="btn btn-outline-primary mr-2">Back to Home</a>
+        <a href="/logout" class="btn btn-secondary">Logout</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Optional: Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

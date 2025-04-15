@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header text-center">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="card-body">
+        <form action="/admin/edit-registration/{{courseId}}/{{regIndex}}" method="POST">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" class="form-control" value="{{registration.name}}" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" value="{{registration.email}}" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Registration</button>
+        </form>
+      </div>
+      <div class="card-footer text-center">
+        <a href="/admin/registrations/{{courseId}}" class="btn btn-secondary">Back to Registrations</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

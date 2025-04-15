@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5 text-center">
+    <h1 class="mb-4">{{title}}</h1>
+
+    {{#userName}}
+      <p class="lead">Welcome, <strong>{{userName}}</strong>!</p>
+    {{/userName}}
+
+    <p class="lead">This is the homepage for our dance organisation.</p>
+
+    <div class="mt-4">
+      <a href="/courses" class="btn btn-primary mr-2">View Courses</a>
+
+      {{#userIsLoggedIn}}
+        {{#isAdmin}}
+          <a href="/admin/dashboard" class="btn btn-success mr-2">My Account</a>
+        {{/isAdmin}}
+        {{^isAdmin}}
+          <a href="/user/dashboard" class="btn btn-success mr-2">My Account</a>
+        {{/isAdmin}}
+        <a href="/logout" class="btn btn-danger">Logout</a>
+      {{/userIsLoggedIn}}
+
+      {{^userIsLoggedIn}}
+        <a href="/login" class="btn btn-outline-primary mr-2">Login</a>
+        <a href="/signup" class="btn btn-outline-secondary">Sign Up</a>
+      {{/userIsLoggedIn}}
+    </div>
+  </div>
+</body>
+</html>

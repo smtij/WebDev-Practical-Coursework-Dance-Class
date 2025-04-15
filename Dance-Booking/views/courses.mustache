@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dance Courses</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Dance Courses</h1>
+
+    {{#courses}}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">{{name}}</h2>
+          <p class="card-text"><strong>Duration:</strong> {{duration}}</p>
+          <p class="card-text">{{description}}</p>
+
+          <h3 class="mt-4">Classes:</h3>
+          <ul class="list-group list-group-flush">
+            {{#classes}}
+              <li class="list-group-item">
+                {{date}} at {{time}} – {{className}} ({{location}}, £{{price}})
+              </li>
+            {{/classes}}
+          </ul>
+
+          <a href="/register-course/{{_id}}" class="btn btn-primary mt-3">Register for this Course</a>
+        </div>
+      </div>
+    {{/courses}}
+
+    <!-- Updated Back Button: Always goes to home -->
+    <div class="mt-4">
+      <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
