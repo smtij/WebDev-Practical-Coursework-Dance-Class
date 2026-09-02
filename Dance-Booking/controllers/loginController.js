@@ -12,13 +12,6 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-  if (username === 'admin' && password === 'password') {
-    req.session.userRole = 'admin';
-    req.session.userName = 'Admin';
-    req.session.accountLink = '/admin/dashboard';
-    return res.redirect('/');
-  }
-
   userDB.findOne({ username: username }, async (err, user) => {
     if (err || !user) {
       return res.render('login', { title: 'Login', error: 'Invalid username or password' });

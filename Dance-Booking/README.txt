@@ -41,9 +41,11 @@ http://localhost:3000
 
 Login Info
 
-Admin login:
-- Username: admin
-- Password: password
+Admin access uses a normal account with role "admin" in the database,
+authenticated the same way as any other user (hashed password, no
+hardcoded credentials in the code). There's no public admin login for
+this demo — ask the project owner for access if you need to see the
+admin views.
 
 ---
 
